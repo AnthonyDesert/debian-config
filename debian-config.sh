@@ -21,3 +21,10 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 #Bitwarden client
 flatpak install flathub com.bitwarden.desktop -y
+
+#OnlyOffice
+sudo apt update && sudo apt install -y curl gnupg && \
+curl -fsSL https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE | sudo gpg --dearmor -o /usr/share/keyrings/onlyoffice.gpg && \
+echo "deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list && \
+sudo apt update && \
+sudo apt install -y onlyoffice-desktopeditors

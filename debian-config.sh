@@ -13,11 +13,11 @@ sudo apt install windsurf -y
 #Nextcloud
 sudo apt install nextcloud-desktop -y
 
+
+#Flatpak
+sudo apt install flatpak -y
+sudo apt install plasma-discover-backend-flatpak -y
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 #Bitwarden client
-sudo apt install -y curl gpg apt-transport-https
-curl -fsSL https://downloads.bitwarden.com/linux/debian/bitwarden.gpg | \
-sudo gpg --dearmor -o /usr/share/keyrings/bitwarden.gpg
-echo "deb [signed-by=/usr/share/keyrings/bitwarden.gpg] https://downloads.bitwarden.com/linux/debian stable main" | \
-sudo tee /etc/apt/sources.list.d/bitwarden.list
-sudo apt update
-sudo apt install bitwarden
+flatpak install flathub com.bitwarden.desktop -y

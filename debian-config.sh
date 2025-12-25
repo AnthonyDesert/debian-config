@@ -44,3 +44,6 @@ EOF
 
 #VLC
 sudo apt install vlc -y
+
+#JAVA
+sudo apt install -y openjdk-21-jre openjdk-21-jdk

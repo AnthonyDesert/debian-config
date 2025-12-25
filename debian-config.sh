@@ -5,4 +5,6 @@ echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/windsurf-stable.gpg] https://w
 rm -f windsurf-stable.gpg
 sudo apt install apt-transport-https
 sudo apt update
-sudo apt install windsurf
+sudo apt install windsurf -y
+sudo apt install nextcloud-desktop -y
+

@@ -28,3 +28,19 @@ curl -fsSL https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE | sudo gpg --dearm
 echo "deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list && \
 sudo apt update && \
 sudo apt install -y onlyoffice-desktopeditors
+
+#Spotify
+curl -sS https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install spotify-client -y
+set -e
+pkill spotify 2>/dev/null || true
+mkdir -p "$HOME/.config/spotify"
+cat > "$HOME/.config/spotify/prefs" << 'EOF'
+ui.hardware_acceleration=false
+ui.webview_hardware_acceleration=false
+EOF
+
+#VLC
+sudo apt install vlc -y
